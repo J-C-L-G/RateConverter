@@ -1,0 +1,31 @@
+{
+  "name": "rate-converter",
+  "version": "1.0.0",
+  "description": "Node module to convert curency rates",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J-C-L-G/RateConverter.git"
+  },
+  "keywords": [
+    "currency",
+    "currencyrates",
+    "usd",
+    "eur",
+    "mx"
+  ],
+  "author": "Juan Carlos Ledezma Garcia",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/J-C-L-G/RateConverter/issues"
+  },
+  "homepage": "https://github.com/J-C-L-G/RateConverter#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "mongodb": "^2.1.19",
+    "promise": "^7.1.1"
+  }
+}
