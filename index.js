@@ -223,7 +223,7 @@ function latestUpdater(){
  */
 function initialize(options) {
     base = options.base || 'USD';
-    historyFolder = path.normalize(__dirname + '/' + (options.historyFolder || 'history') + '/');
+    historyFolder = options.historyFolder || (path.normalize(__dirname + '/history') + '/');
     //Create directory
     if (!fs.existsSync(historyFolder)){
         fs.mkdirSync(historyFolder);
@@ -318,9 +318,11 @@ function getData(requestType, date) {
 
 
 /** ..:: convertRates ::..
- *
+ * Function that will take the amount, the currency from where
+ * the transaction was done, and the currency to where you want
+ * to convert it ('latest', 'latest','MXN',1000,'USD')
  */
-function convertRates( requestType, date, from , amount, to){
+function convertRates(requestType, date, from , amount, to){
     return new Promise(function(resolve, reject){
         getData(requestType, date)
             .then(function(jsonData){
