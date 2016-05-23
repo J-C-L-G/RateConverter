@@ -59,6 +59,8 @@ Initial implementation, feel free to contribute!
 
 ## Release History
 
+* 0.1.4 Initial release Fixed
+* 0.1.3 Fixed historical folder from server root
 * 0.1.2 Initial release completed
 * 0.1.1 Fixed folder for historical data
 * 0.1.0 Initial release
