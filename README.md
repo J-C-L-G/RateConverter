@@ -17,7 +17,7 @@ to avoid requesting data already requested previously.
 
 ## Usage
 
-var rateConverter = require('RateConverter');
+var rateConverter = require('rate-converter');
 
 	rateConverter.initialize({
 		historyCollection: 'history', 				//Name the collection in DB
