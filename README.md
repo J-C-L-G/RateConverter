@@ -20,11 +20,11 @@ to avoid requesting data already requested previously.
     var rateConverter = require('rate-converter');
     
     rateConverter.initialize({
-        historyCollection: 'history', 				//Name the collection in DB
-        historyFolder: 'history',					//Name the folder in the FileSystem
-        mongodb_url: 'mongodb://127.0.0.1/yourDB',	//If you don't provide this, the module will use FS not MongoDB
-        API_KEY: yourAPIKEY',						//Provide your API key from https://openexchangerates.org/
-        updateLatestRates : 10000					//A time in milliseconds to update the latest rates.
+        historyCollection: 'history', 				    //Name the collection in DB
+        historyFolder: 'history',					    //Name the folder in the FileSystem
+        mongodb_url: 'mongodb://127.0.0.1/yourDB',	    //If you don't provide this, the module will use FS not MongoDB
+        API_KEY: yourAPIKEY',						    //Provide your API key from https://openexchangerates.org/
+        updateLatestRates : 10000					    //A time in milliseconds to update the latest rates.
         });
     
     //for historical data

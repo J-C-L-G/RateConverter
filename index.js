@@ -122,12 +122,12 @@ function persistData(date, jsonData) {
             .then(
             saveDataToFS(jsonData)
                 .then(
-                    function(data){
-                        fulfill(jsonData);
-                    },function(error){
-                        reject(error);
-                    })
-                );
+                function(data){
+                    fulfill(jsonData);
+                },function(error){
+                    reject(error);
+                })
+        );
     });
 }
 
@@ -142,12 +142,12 @@ function getDataFromService(requestType, date) {
     return new Promise(function (resolve, reject) {
         urlJSONloader(serviceProviderUrls[requestType](date))
             .then(function (data) {
-                    persistData(date, data)
-                        .then(function (data) {
-                                resolve(data);
-                            },function(error){
-                                reject(error);
-                            });
+                persistData(date, data)
+                    .then(function (data) {
+                        resolve(data);
+                    },function(error){
+                        reject(error);
+                    });
             },
             function (error) {
                 reject(error);
@@ -184,7 +184,9 @@ function getJSONfromFS(date) {
         date = historyFolder + date + '.json';
         fs.readFile(date, 'utf-8', function (error, fileContent) {
             if (error)
-                reject(null);
+                reject('No such file exists in '+historyFolder+' folder');
+            if(fileContent == undefined)
+                reject(undefined);
             resolve(fileContent);
         });
     });
@@ -200,13 +202,13 @@ function getJSONfromFS(date) {
  * {_id : 'latest'} and the latest.json
  */
 function latestUpdater(){
-        getDataFromService('latest','latest')
-            .then(function(latestData){
-                historyCollection.update({_id:'latest'},latestData,function(error){
-                 if(error)
-                     throw error;
-                });
+    getDataFromService('latest','latest')
+        .then(function(latestData){
+            historyCollection.update({_id:'latest'},latestData,function(error){
+                if(error)
+                    throw error;
             });
+        });
 }
 
 
@@ -223,7 +225,7 @@ function latestUpdater(){
  */
 function initialize(options) {
     base = options.base || 'USD';
-    historyFolder = options.historyFolder || (path.normalize(__dirname + '/history') + '/');
+    historyFolder = path.normalize( (options.historyFolder + '/') || (__dirname + '/history') + '/');
     //Create directory
     if (!fs.existsSync(historyFolder)){
         fs.mkdirSync(historyFolder);
@@ -322,7 +324,7 @@ function getData(requestType, date) {
  * the transaction was done, and the currency to where you want
  * to convert it ('latest', 'latest','MXN',1000,'USD')
  */
-function convertRates(requestType, date, from , amount, to){
+function convertRates( requestType, date, from , amount, to){
     return new Promise(function(resolve, reject){
         getData(requestType, date)
             .then(function(jsonData){
@@ -330,7 +332,7 @@ function convertRates(requestType, date, from , amount, to){
                 var usdEq = jsonData.rates[from], // 1usd
                     amountInUSD = amount / usdEq,
                     amountConverted = amountInUSD * jsonData.rates[to] ;
-                    resolve(amountConverted);
+                resolve(amountConverted);
             },
             function(error){reject(error)}
         );
