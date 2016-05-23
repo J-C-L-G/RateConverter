@@ -1,6 +1,6 @@
 {
   "name": "rate-converter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Node module to convert curency rates",
   "main": "index.js",
   "scripts": {

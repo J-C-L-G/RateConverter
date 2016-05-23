@@ -17,35 +17,35 @@ to avoid requesting data already requested previously.
 
 ## Usage
 
-var rateConverter = require('rate-converter');
-
-rateConverter.initialize({
-    historyCollection: 'history', 				//Name the collection in DB
-	historyFolder: 'history',					//Name the folder in the FileSystem
-	mongodb_url: 'mongodb://127.0.0.1/yourDB',	//If you don't provide this, the module will use FS not MongoDB
-	API_KEY: yourAPIKEY',						//Provide your API key from https://openexchangerates.org/
-	updateLatestRates : 10000					//A time in milliseconds to update the latest rates.
-	});
-
-//for historical data
-  rateConverter.convertRates('historical', '2016-05-16', 'MXN', 1000, 'USD')
-  .then(function (result) {
-     console.log(result);
-    }, function (error) {
-       console.log(error)
-    });
-        
-//for latest data
-rateConverter.convertRates('latest', 'latest', 'USD', 1000, 'MXN')
-    .then(...);
-        
-//for supported currencies 
-rateConverter.convertRates('currencies', 'currencies')
-    .then(...);
-
-//for JSON Data
-rateConverter.getData('historical', 'YYYY-MM-DD')
-    .then(...);
+    var rateConverter = require('rate-converter');
+    
+    rateConverter.initialize({
+        historyCollection: 'history', 				//Name the collection in DB
+        historyFolder: 'history',					//Name the folder in the FileSystem
+        mongodb_url: 'mongodb://127.0.0.1/yourDB',	//If you don't provide this, the module will use FS not MongoDB
+        API_KEY: yourAPIKEY',						//Provide your API key from https://openexchangerates.org/
+        updateLatestRates : 10000					//A time in milliseconds to update the latest rates.
+        });
+    
+    //for historical data
+      rateConverter.convertRates('historical', '2016-05-16', 'MXN', 1000, 'USD')
+      .then(function (result) {
+         console.log(result);
+        }, function (error) {
+           console.log(error)
+        });
+            
+    //for latest data
+    rateConverter.convertRates('latest', 'latest', 'USD', 1000, 'MXN')
+        .then(...);
+            
+    //for supported currencies 
+    rateConverter.convertRates('currencies', 'currencies')
+        .then(...);
+    
+    //for JSON Data
+    rateConverter.getData('historical', 'YYYY-MM-DD')
+        .then(...);
 
 ## Tests
 
