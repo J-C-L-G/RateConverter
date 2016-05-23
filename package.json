@@ -23,7 +23,9 @@
     "url": "https://github.com/J-C-L-G/RateConverter/issues"
   },
   "homepage": "https://github.com/J-C-L-G/RateConverter#readme",
-  "devDependencies": {},
+  "devDependencies": {
+    "jasmine": "^2.4.1"
+  },
   "dependencies": {
     "mongodb": "^2.1.19",
     "promise": "^7.1.1"
