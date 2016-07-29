@@ -4,8 +4,8 @@ beforeEach(function(){
     rateConverter.initialize({
         historyCollection: 'history',
         historyFolder: 'history',
-        /*mongodb_url: 'mongodb://127.0.0.1/rates',*/
-        API_KEY: 'd40d3014b6d84d0ab84a3acbdd523d01',
+        mongodb_url: '',    //provide your own
+        API_KEY: '',        //provide your own
         updateLatestRates : 10000
     });
 });
