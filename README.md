@@ -1,7 +1,8 @@
 # RateConverter
-# =============
+# :::::::::::::::::::::::::::::::::::::::::::
 
-npm module to convert Currency Rates Using the REST API from https://openexchangerates.org/
+[npm module](https://www.npmjs.com/package/rate-converter) to convert Currency Rates Using the REST API from [Open Exchange Rates](https://openexchangerates.org/)
+
 
 > A small library providing a utility method to convert from different rates supporting the latest rates and historical rates.
 
@@ -57,9 +58,8 @@ npm module to convert Currency Rates Using the REST API from https://openexchang
 
 
 ## Tests
-```
+```javascript
   cd tests
-  
   jasmine
 ```
 
