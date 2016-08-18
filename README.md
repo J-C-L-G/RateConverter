@@ -1,5 +1,5 @@
 # RateConverter
-# :::::::::::::::::::::::::::::::::::::::::::
+# ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 [npm module](https://www.npmjs.com/package/rate-converter) to convert Currency Rates Using the REST API from [Open Exchange Rates](https://openexchangerates.org/)
 
@@ -9,11 +9,13 @@
 > Storing Data using MongoDB (optional) and the FileSystem to avoid requesting data already requested previously.
 
 
+
 ## Installation
 
 ```
   npm install rate-converter --save
 ```
+
 
 ## Usage
 ```javascript
@@ -57,6 +59,7 @@
 ```
 
 
+
 ## Tests
 ```javascript
   cd tests
@@ -64,14 +67,17 @@
 ```
 
 
+
 ## Contribution(s)
 
 Initial implementation, feel free to contribute. If you have a comment, feel free to suggest and fork the project!
 
 
+
 ## Note(s) - Updates
 
 This module can be improved to perform better, as of now im a little busy but i'll be working as soon as i can to integrate the feature of multiple conversions in an array based syntax.
+
 
 
 ## Release History
