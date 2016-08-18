@@ -82,6 +82,7 @@ This module can be improved to perform better, as of now im a little busy but i'
 
 ## Release History
 
+* 0.1.6 Stable Release
 * 0.1.5 Update Test Files
 * 0.1.4 Initial release Fixed
 * 0.1.3 Fixed historical folder from server root
